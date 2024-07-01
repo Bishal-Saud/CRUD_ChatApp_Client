@@ -5,6 +5,7 @@ import { Grid } from "@mui/material";
 import ChatList from "../specific/ChatList";
 import { sampleChats } from "../../constants/sampleData";
 import { useParams } from "react-router-dom";
+import Profile from "../specific/Profile";
 
 const AppLayout = () => (WrappedComponent) => {
   return (props) => {
@@ -50,7 +51,7 @@ const AppLayout = () => (WrappedComponent) => {
               bgcolor: "primary.main",
             }}
           >
-            third
+            <Profile />
           </Grid>
         </Grid>
       </>
