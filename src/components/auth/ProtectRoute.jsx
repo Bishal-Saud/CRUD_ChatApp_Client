@@ -1,8 +1,11 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-function ProtectRoute({ children, user, redirect = "/login" }) {
-  return user ? <Outlet /> : <Navigate to={redirect} />;
-}
+const ProtectRoute = ({ user, redirect, children }) => {
+  if (!user) {
+    return <Navigate to={redirect || "/login"} />;
+  }
+  return children ? children : <Outlet />;
+};
 
 export default ProtectRoute;
