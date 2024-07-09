@@ -296,7 +296,13 @@ function Group() {
 
 const GroupsList = ({ w = "100%", myGroups = [], chatId }) => {
   return (
-    <Stack width={w}>
+    <Stack
+      width={w}
+      sx={{
+        height: "100vh",
+        overflowX: "scroll",
+      }}
+    >
       {myGroups.length > 0 ? (
         myGroups.map((group) => (
           <GroupListItems group={group} chatId={chatId} key={group._id} />
